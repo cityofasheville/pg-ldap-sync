@@ -226,9 +226,11 @@ class Application
   def create_pg_role(role)
     pg_conf = @config[role.type==:user ? :pg_users : :pg_groups]
     pg_exec_modify "CREATE ROLE \"#{role.name}\" #{pg_conf[:create_options]}"
+    pg_exec_modify "CREATE SCHEMA \"#{role.name}\" AUTHORIZATION  \"#{role.name}\""
   end
 
   def drop_pg_role(role)
+    pg_exec_modify "DROP SCHEMA IF EXISTS \"#{role.name}\" CASCADE"
     pg_exec_modify "DROP ROLE \"#{role.name}\""
   end
 
