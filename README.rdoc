@@ -2,6 +2,13 @@
 
 * http://github.com/larskanis/pg-ldap-sync
 
+== City of Asheville Usage Information
+This utility is used to synchronize GIS warehouse logins with
+Active Directory. It runs as a cron job under the root account on coa-gis-job1.
+
+**DO NOT DELETE THIS REPOSITORY WITHOUT VERIFYING THAT THE UTILITY IS NO LONGER IN USE**
+
+
 == DESCRIPTION:
 
 LDAP is often used for a centralized user and role management
